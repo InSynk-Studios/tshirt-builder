@@ -21,15 +21,27 @@ class Canvas extends Component {
                 position: 'relative',
                 backgroundColor: this.props.tshirtColor
               }}>
-              <img src={TShirtFront} style={{
-                height: '500px'
-              }} />
-              <div id="drawingArea" style={{ position: 'absolute', top: '100px', left: '110px', zIndex: '10', width: '200px', height: '300px' }}>
+              <img
+                src={TShirtFront}
+                style={{
+                  height: '500px'
+                }}
+              />
+              <div
+                id="drawingArea"
+                style={{
+                  position: 'absolute',
+                  top: '80px',
+                  left: '118px',
+                  zIndex: '10',
+                  width: '180px',
+                  height: '320px'
+                }}>
                 <canvas
                   id="canvas"
                   style={{
-                    width: '200px',
-                    height: '300px'
+                    width: '180px',
+                    height: '320px'
                   }} />
               </div>
             </div>

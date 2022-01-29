@@ -83,10 +83,10 @@ class Editor extends Component {
             Editor
           </div>
           <div className="card-body">
-            <p class="h5">Choose Color:</p>
+            <p className="h5">Choose Color:</p>
             {renderColorPicker(this.props.dispatch)}
 
-            <p class="h5">Add Image:</p>
+            <p className="h5">Add Image:</p>
             <input type="file" onChange={(event) => { this.fileChangedHandler(event, this.props.dispatch) }} />
             {this.props.images && this.props.images.length ? renderImageSelector(this.props.images, this.props) : <div></div>}
           </div>

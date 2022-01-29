@@ -8,8 +8,8 @@ import { canvasInitialized } from '../store/actions';
 const initCanvas = () => {
   return (
     new fabric.Canvas('canvas', {
-      height: 300,
-      width: 200,
+      height: 320,
+      width: 180,
       hoverCursor: 'pointer',
       selection: true,
       selectionBorderColor: 'blue'
