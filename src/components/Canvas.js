@@ -13,25 +13,24 @@ class Canvas extends Component {
             Canvas
           </div>
           <div className="card-body">
-            <div className="position-relative">
-              <div
-                style={{
-                  width: '400px',
-                  height: '500px',
-                  position: 'relative',
-                  backgroundColor: this.props.tshirtColor
-                }}>
-                <img src={TShirtFront} style={{
-                  height: '500px'
-                }} />
-                <div id="drawingArea" style={{ position: 'absolute', top: '100px', left: '110px', zIndex: '10', width: '200px', height: '300px' }}>
-                  <canvas
-                    id="canvas"
-                    style={{
-                      width: '200px',
-                      height: '300px'
-                    }} />
-                </div>
+            <div
+              className="mx-auto"
+              style={{
+                width: '400px',
+                height: '500px',
+                position: 'relative',
+                backgroundColor: this.props.tshirtColor
+              }}>
+              <img src={TShirtFront} style={{
+                height: '500px'
+              }} />
+              <div id="drawingArea" style={{ position: 'absolute', top: '100px', left: '110px', zIndex: '10', width: '200px', height: '300px' }}>
+                <canvas
+                  id="canvas"
+                  style={{
+                    width: '200px',
+                    height: '300px'
+                  }} />
               </div>
             </div>
           </div>
