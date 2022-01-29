@@ -14,6 +14,10 @@ function fabric(state = {}, action) {
   switch (action.type) {
     case 'CANVAS_INITIALIZED':
       return { ...state, canvas: action.canvas }
+    case 'IMAGE_PUSHED':
+      const images = state.images || []
+      images.push(action.image)
+      return { ...state, images }
     default:
       return state
   }

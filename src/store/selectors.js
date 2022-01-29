@@ -9,3 +9,6 @@ import { createSelector } from 'reselect'
 
 const canvas = state => get(state, 'fabric.canvas')
 export const canvasSelector = createSelector(canvas, c => c)
+
+const images = state => get(state, 'fabric.images')
+export const imagesSelector = createSelector(images, i => i)

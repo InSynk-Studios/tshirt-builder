@@ -11,3 +11,10 @@ export function canvasInitialized(canvas) {
     canvas
   }
 }
+
+export function imagePushed(image) {
+  return {
+    type: 'IMAGE_PUSHED',
+    image
+  }
+}
