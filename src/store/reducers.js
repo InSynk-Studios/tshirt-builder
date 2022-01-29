@@ -18,6 +18,8 @@ function fabric(state = {}, action) {
       const images = state.images || []
       images.push(action.image)
       return { ...state, images }
+    case 'TSHIRT_COLOR_CHANGED':
+      return { ...state, tshirtColor: action.tshirtColor || 'white' }
     default:
       return state
   }

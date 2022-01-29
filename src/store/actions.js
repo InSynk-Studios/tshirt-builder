@@ -18,3 +18,10 @@ export function imagePushed(image) {
     image
   }
 }
+
+export function tshirtColorChanged(tshirtColor) {
+  return {
+    type: 'TSHIRT_COLOR_CHANGED',
+    tshirtColor
+  }
+}

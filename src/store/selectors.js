@@ -12,3 +12,6 @@ export const canvasSelector = createSelector(canvas, c => c)
 
 const images = state => get(state, 'fabric.images')
 export const imagesSelector = createSelector(images, i => i)
+
+const tshirtColor = state => get(state, 'fabric.tshirtColor')
+export const tshirtColorSelector = createSelector(tshirtColor, c => c)

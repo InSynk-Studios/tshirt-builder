@@ -1,11 +1,32 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
 import { canvasSelector, imagesSelector } from "../store/selectors";
-import { imagePushed } from "../store/actions";
+import { imagePushed, tshirtColorChanged } from "../store/actions";
 import { fabric } from 'fabric';
-import { FIRST_DUMMY_IMG } from "../helpers/dummy";
+import { FIRST_DUMMY_IMG, COLORS } from "../helpers/dummy";
 
-const renderImages = (images, props) => {
+const renderColorPicker = (dispatch) => {
+  return (
+    <div className="row my-4 border border-secondary border-4 p-4">
+      {COLORS.map((color, index) => {
+        return (
+          <div
+            onClick={(e) => dispatch(tshirtColorChanged(color))}
+            className="m-1"
+            style={{
+              height: '20px',
+              width: '20px',
+              background: color,
+              cursor: 'pointer'
+            }}>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+const renderImageSelector = (images, props) => {
   return (
     <div className="row mt-4 border border-secondary border-4 p-4">
       {images.map((image, index) => {
@@ -14,8 +35,8 @@ const renderImages = (images, props) => {
             onClick={(event) => addToCanvas(image, props)}
             className="col col-md-6 mb-4"
             key={index}
-            style={{ 
-              cursor: 'pointer' 
+            style={{
+              cursor: 'pointer'
             }}
           >
             <img src={image} height='100px' width='100px' />
@@ -61,8 +82,12 @@ class Editor extends Component {
             Editor
           </div>
           <div className="card-body">
+            <p class="h5">Choose Color:</p>
+            {renderColorPicker(this.props.dispatch)}
+
+            <p class="h5">Add Image:</p>
             <input type="file" onChange={(event) => { this.fileChangedHandler(event, this.props.dispatch) }} />
-            {this.props.images && this.props.images.length ? renderImages(this.props.images, this.props) : <div></div>}
+            {this.props.images && this.props.images.length ? renderImageSelector(this.props.images, this.props) : <div></div>}
           </div>
         </div>
       </div>

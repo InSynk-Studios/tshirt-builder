@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
-import { canvasSelector } from "../store/selectors";
+import { canvasSelector, tshirtColorSelector } from "../store/selectors";
 import TShirtFront from '../assets/img/crew_front.png';
 
 class Canvas extends Component {
@@ -14,7 +14,13 @@ class Canvas extends Component {
           </div>
           <div className="card-body">
             <div className="position-relative">
-              <div style={{ width: '530px', height: '630px', position: 'relative', backgroundColor: 'rgb(255, 255, 255)' }}>
+              <div
+                style={{
+                  width: '400px',
+                  height: '500px',
+                  position: 'relative',
+                  backgroundColor: this.props.tshirtColor
+                }}>
                 <img src={TShirtFront} style={{
                   height: '500px'
                 }} />
@@ -37,7 +43,8 @@ class Canvas extends Component {
 
 function mapStateToProps(state) {
   return {
-    canvas: canvasSelector(state)
+    canvas: canvasSelector(state),
+    tshirtColor: tshirtColorSelector(state)
   }
 }
 
