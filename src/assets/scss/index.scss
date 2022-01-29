@@ -1,0 +1,8 @@
+@import '~bootstrap/scss/bootstrap';
+
+#drawingArea {
+  &:hover {
+    border: 1px solid grey;
+  }
+  border: 0;
+}
