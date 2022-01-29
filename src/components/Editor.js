@@ -13,6 +13,7 @@ const renderColorPicker = (dispatch) => {
           <div
             onClick={(e) => dispatch(tshirtColorChanged(color))}
             className="m-1"
+            key={index}
             style={{
               height: '20px',
               width: '20px',
